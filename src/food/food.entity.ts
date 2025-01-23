@@ -71,7 +71,7 @@ export class FoodEntity {
     @Column({ type: 'varchar', length: 512 })
     potassium: string
 
-    @Column({ type: 'decimal' })
+    @Column({ type: 'varchar', length: 512 })
     sodium: number
 
     @Column({ type: 'varchar', length: 512 })
