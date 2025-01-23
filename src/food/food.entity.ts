@@ -50,22 +50,22 @@ export class FoodEntity {
     @Column({ type: 'varchar', length: 512 })
     sugar: string
 
-    @Column({ type: 'decimal' })
+    @Column({ type: 'varchar', length: 512 })
     fiber: number
 
-    @Column({ type: 'decimal' })
+    @Column({ type: 'varchar', length: 512 })
     vitamin_a: number
 
-    @Column({ type: 'decimal' })
+    @Column({ type: 'varchar', length: 512 })
     ascorbic_acid: number
 
-    @Column({ type: 'decimal' })
+    @Column({ type: 'varchar', length: 512 })
     folic_acid: number
 
-    @Column({ type: 'decimal' })
+    @Column({ type: 'varchar', length: 512 })
     calcium: number
 
-    @Column({ type: 'decimal' })
+    @Column({ type: 'varchar', length: 512 })
     iron: number
 
     @Column({ type: 'varchar', length: 512 })
