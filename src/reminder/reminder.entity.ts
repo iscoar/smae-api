@@ -13,7 +13,7 @@ export class ReminderEntity {
     @Column({ type: 'varchar', length: 512 })
     meal_type: string
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     equivalents: number
 
     @ManyToOne(() => FoodEntity)

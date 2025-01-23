@@ -11,7 +11,7 @@ export class FoodEntity {
     @Column({ type: 'varchar', length: 512 })
     category: string
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     suggested_quantity: number
 
     @Column({ type: 'varchar', length: 512 })
@@ -26,13 +26,13 @@ export class FoodEntity {
     @Column({ type: 'int' })
     energy: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     proteins: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     lipids: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     carbohydrates: number
 
     @Column({ type: 'varchar', length: 512 })
@@ -50,28 +50,28 @@ export class FoodEntity {
     @Column({ type: 'varchar', length: 512 })
     sugar: string
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     fiber: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     vitamin_a: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     ascorbic_acid: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     folic_acid: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     calcium: number
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     iron: number
 
     @Column({ type: 'varchar', length: 512 })
     potassium: string
 
-    @Column({ type: 'double' })
+    @Column({ type: 'decimal' })
     sodium: number
 
     @Column({ type: 'varchar', length: 512 })
