@@ -85,8 +85,14 @@ export class ReminderController {
     @Get('dates')
     async findAllDistinctDates(
         @Query('patientId') patientId: number,
-    ): Promise<Date[]> {
-        return this.reminderService.findAllDistinctDates(patientId);
+    ): Promise<string[]> {
+        const dates = await this.reminderService.findAllDistinctDates(patientId);
+
+        return dates.map((date) => {
+            const [_date, timezone] = date.toISOString().split('T');
+
+            return _date;
+        });
     }
 
     @Post()
