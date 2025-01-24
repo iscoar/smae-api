@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FoodEntity } from './food.entity';
-import { Like, Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 
 @Injectable()
 export class FoodService {
@@ -21,7 +21,7 @@ export class FoodService {
     async findByName(name: string): Promise<FoodEntity[]> {
         return await this.foodRepository.find({ 
             select: ['id', 'name'],
-            where: { name: Like(`%${name}%`) },
+            where: { name: ILike(`%${name}%`) },
             take: 20,
         });
     }
