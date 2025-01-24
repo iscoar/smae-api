@@ -22,7 +22,7 @@ export class FoodService {
         return await this.foodRepository.find({ 
             select: ['id', 'name'],
             where: { name: Like(`%${name}%`) },
-            take: 5,
+            take: 20,
         });
     }
 }
