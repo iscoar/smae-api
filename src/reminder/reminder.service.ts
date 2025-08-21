@@ -1,10 +1,13 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ReminderEntity } from './reminder.entity';
 import { Repository } from 'typeorm';
+import { Cron } from '@nestjs/schedule';
 
 @Injectable()
 export class ReminderService {
+    private readonly logger = new Logger(ReminderService.name);
+
     constructor(
         @InjectRepository(ReminderEntity)
         private readonly reminderRepository: Repository<ReminderEntity>,
@@ -78,5 +81,15 @@ export class ReminderService {
 
     async create(reminder: ReminderEntity): Promise<ReminderEntity> {
         return this.reminderRepository.save(reminder);
+    }
+
+    @Cron('0 0 * * *') // Runs every day at midnight
+    async handleCron(): Promise<void> {
+        const reminders = await this.reminderRepository.find({
+            where: {
+                date: new Date(),
+            },
+        });
+        this.logger.log(`Found ${reminders.length} reminders for today.`);
     }
 }
